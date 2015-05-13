@@ -12,5 +12,14 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "resolutions": {
+    "angular": "~1.2.0"
+  },
+  "dependencies": {
+    "angular-ui": "~0.4.0",
+    "angularAMD": "~0.2.1",
+    "angular-lodash": "~0.1.2",
+    "angular": "~1.3.15"
+  }
 }
