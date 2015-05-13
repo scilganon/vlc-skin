@@ -1,0 +1,16 @@
+{
+  "name": "learn-symfony",
+  "version": "0.0.0",
+  "main": "index.html",
+  "authors": [
+    "scilganon@bigmir.net"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
