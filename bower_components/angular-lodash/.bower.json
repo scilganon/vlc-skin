@@ -20,5 +20,7 @@
     "commit": "4c0f90bfc40cf9517522d7f3e3ad3d5e165d5326"
   },
   "_source": "git://github.com/cabrel/angular-lodash.git",
-  "_target": "*"
+  "_target": "~0.1.2",
+  "_originalSource": "angular-lodash",
+  "_direct": true
 }
