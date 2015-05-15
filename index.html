@@ -3,19 +3,32 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+
+    <script>
+        window.uri = {
+            host: 'player_proxy',
+            port: '80',
+            schema: 'http'
+        };
+
+        window.auth = {
+            login: '',
+            password: '0000'
+        };
+    </script>
 </head>
 <body>
-<div class="area" >
-    <div class="controls" data-ng-controller="ControlsCtrl">
-    </div>
+<div class="area">
+    <div data-ng-include="'js/views/playlist.html'"></div>
+    <div data-ng-include="'js/views/controls.html'"></div>
 </div>
 
-<script src="js/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="js/bower_components/angular/angular.min.js"></script>
-<script src="js/components/Control.js"></script>
-<script src="js/components/ControlsCollection.js"></script>
-<script src="js/controllers/ControlsCtrl.js"></script>
 <script src="js/components/Playlist.js"></script>
-<script src="js/components/Requestor.js "></script>
+<script src="js/components/Uri.js"></script>
+<script src="js/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/bower_components/angular/angular.js"></script>
+<script src="js/bower_components/angular-resource/angular-resource.js"></script>
+<script src="js/controllers/Controllers.js"></script>
+<script src="js/controllers/Services.js"></script>
 </body>
 </html>

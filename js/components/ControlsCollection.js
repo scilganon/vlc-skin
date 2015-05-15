@@ -1,3 +1,8 @@
+/**
+ * @param {Object} [config]
+ * @returns {{add: Function, getItem: Function, addDefault: Function, render: Function}}
+ * @constructor
+ */
 var ControllCollection = function(config){
     config = angular.extend({
         'prev': true,

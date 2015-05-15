@@ -1,0 +1,18 @@
+<style>
+    .playlist a:hover {
+        background: #ccc;
+        font-weight: bold;
+    }
+</style>
+
+<div class="playlist" data-ng-controller="PlaylistCtrl">
+    <div data-ng-repeat="item in items.getLeafs()">
+        <ul>
+            <li>
+                <a data-ng-click="startItem(item['id'])">
+                    {{item['id']}} {{item['name']}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
