@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html data-ng-app="app">
+<html data-ng-app="app" data-ng-controller="MainCtrl">
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title check-status>{{title}}</title>
 
     <script>
         window.uri = {
@@ -21,8 +21,10 @@
 <div class="area">
     <div data-ng-include="'js/views/playlist.html'"></div>
     <div data-ng-include="'js/views/controls.html'"></div>
+    <div data-ng-include="'js/views/status.html'"></div>
 </div>
 
+<script src="js/components/Status.js"></script>
 <script src="js/components/Playlist.js"></script>
 <script src="js/components/Uri.js"></script>
 <script src="js/bower_components/jquery/dist/jquery.min.js"></script>
@@ -30,5 +32,6 @@
 <script src="js/bower_components/angular-resource/angular-resource.js"></script>
 <script src="js/controllers/Controllers.js"></script>
 <script src="js/controllers/Services.js"></script>
+<script src="js/controllers/Directives.js"></script>
 </body>
 </html>

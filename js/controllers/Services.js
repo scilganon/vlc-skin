@@ -16,20 +16,55 @@ services.factory('Vlc', ['$http', function($http){
     var linker = new Uri();
 
     return {
+        status: function(){
+            return $http({
+                method: 'get',
+                url: linker.command
+            });
+        },
+
         playlist: function(){
-            return $http.get([linker.base,linker.decorateWithFormat('playlist')].join('/'), {
-                headers: {
-                    'Authorization': 'Basic OjAwMDA='
-                }
+            return $http({
+                method: 'get',
+                url: linker.base + '/'+linker.decorateWithFormat('playlist')
             });
         },
         play: function(id){
-            return $http
-                .get([linker.command, '?', 'command=pl_play', '&', 'id=', id].join(''));
+            return $http({
+                method: 'get',
+                url: linker.command,
+                params: {
+                    command: 'pl_play',
+                    id: id
+                }
+            });
         },
         stop: function(){
-            return $http
-                .get([linker.command, '?', 'command=pl_stop'].join(''));
+            return $http({
+                method: 'get',
+                url: linker.command,
+                params: {
+                    command: 'pl_stop'
+                }
+            });
+        },
+        next: function(){
+            return $http({
+                method: 'get',
+                url: linker.command,
+                params: {
+                    command: 'pl_next'
+                }
+            });
+        },
+        previous: function(){
+            return $http({
+                method: 'get',
+                url: linker.command,
+                params: {
+                    command: 'pl_previous'
+                }
+            });
         }
     };
 }]);
