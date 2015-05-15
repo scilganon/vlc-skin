@@ -79,7 +79,7 @@ node_modules
 
 ### Yeoman template
 node_modules/
-bower_components/*
+js/bower_components/*
 *.log
 
 build/
