@@ -2,7 +2,12 @@
 <html data-ng-app="app" data-ng-controller="MainCtrl">
 <head lang="en">
     <meta charset="UTF-8">
-    <title check-status>{{title}}</title>
+    <link rel="stylesheet" href="js/bower_components/angular-bootstrap/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" href="js/bower_components/angular/angular-csp.css"/>
+    <link rel="stylesheet" href="js/bower_components/angular-ui/build/angular-ui.css"/>
+    <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+    <title check-status ng-bind="title">Vlc</title>
 
     <script>
         window.uri = {
@@ -24,12 +29,15 @@
     <div data-ng-include="'js/views/status.html'"></div>
 </div>
 
+<script src="js/components/ConnectionSettings.js"></script>
 <script src="js/components/Status.js"></script>
 <script src="js/components/Playlist.js"></script>
 <script src="js/components/Uri.js"></script>
 <script src="js/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="js/bower_components/angular/angular.js"></script>
 <script src="js/bower_components/angular-resource/angular-resource.js"></script>
+<script src="js/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="js/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 <script src="js/controllers/Controllers.js"></script>
 <script src="js/controllers/Services.js"></script>
 <script src="js/controllers/Directives.js"></script>

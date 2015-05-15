@@ -1,0 +1,22 @@
+<div data-ng-controller="SettingsCtrl">
+    <div class="modal-header">
+        <h2>Contact Detail</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="surname">Password:</label>
+            <input ng-model="password" type="text" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="surname">Host:</label>
+            <input ng-model="host" type="text" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="surname">Port:</label>
+            <input ng-model="port" type="text" class="form-control"/>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-ng-click="save()">OK</button>
+    </div>
+</div>

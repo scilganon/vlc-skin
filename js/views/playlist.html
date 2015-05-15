@@ -6,13 +6,9 @@
 </style>
 
 <div class="playlist" data-ng-controller="PlaylistCtrl">
-    <div data-ng-repeat="item in items.getLeafs()">
-        <ul>
-            <li>
-                <a data-ng-click="startItem(item['id'])">
-                    {{item['id']}} {{item['name']}}
-                </a>
-            </li>
-        </ul>
+    <div class="list-group">
+        <a data-ng-repeat="item in items.getLeafs()" class="list-group-item" data-ng-click="startItem(item['id'])">
+            {{item['id']}} {{item['name']}}
+        </a>
     </div>
 </div>

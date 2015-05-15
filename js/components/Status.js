@@ -5,7 +5,7 @@ var Status = function(config){
         },
 
         get duration(){
-            return Math.abs(config.time || 0 / 60) + ':' + (config.time % 60);
+            return Math.ceil((config.time || 0) / 60) + ':' + (config.time % 60);
         },
 
         get pageTitle (){

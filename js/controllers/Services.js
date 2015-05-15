@@ -1,5 +1,6 @@
 var services = angular.module('Services',[
-    'ngResource'
+    'ngResource',
+    'LocalStorageModule'
 ]);
 
 services.config(function ( $httpProvider) {
@@ -10,6 +11,26 @@ services.config(function ( $httpProvider) {
     $httpProvider.defaults.headers.common['Authorization'] = 'Basic OjAwMDA=';
     $httpProvider.defaults.useXDomain = true;
 });
+
+services.factory('SettingSrv', ['localStorageService', function(localStorageService){
+    return {
+        /**
+         * @returns {ConnectionSettings}
+         */
+        grab: function () {
+            var config = localStorageService.get(ConnectionSettings.INDEX);
+
+            if(!config){
+                console.warn(ConnectionSettings.INDEX + ' is empty');
+            }
+
+            return new ConnectionSettings(config || {});
+        },
+        save: function (config) {
+            localStorageService.set(ConnectionSettings.INDEX, JSON.stringify(new ConnectionSettings(config)));
+        }
+    };
+}]);
 
 services.factory('Vlc', ['$http', function($http){
 

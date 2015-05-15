@@ -1,13 +1,27 @@
 var app = angular.module('app', [
     'Services',
-    'Directives'
+    'Directives',
+    'ui.bootstrap'
 ]);
 
-app.controller('ControlsCtrl', ['$scope', '$element', 'Vlc', function($scope, $element, Vlc){
+app.config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+        .setPrefix('myApp')
+        .setStorageType('localStorage');
+});
+
+app.controller('ControlsCtrl', ['$scope', '$element', 'Vlc', '$modal', function($scope, $element, Vlc, $modal){
     $scope.stopPlay = Vlc.stop;
     $scope.startPlay = Vlc.play;
     $scope.nextPlay = Vlc.next;
     $scope.prevPlay = Vlc.previous;
+    $scope.showSettings = function(){
+        $modal.open({
+            templateUrl: 'js/views/settings.html',
+            size: 'lg',
+            controller: 'SettingsCtrl'
+        });
+    }
 }]);
 
 app.controller('MainCtrl', ['$scope',function($scope){
@@ -30,4 +44,22 @@ app.controller('StatusCtrl', ['$scope', '$element', 'Vlc', '$interval', '$rootSc
             $scope.status = $rootScope.status = new Status(data);
         });
     }, 1000);
+}]);
+
+app.controller('SettingsCtrl', ['$scope', 'SettingSrv', function($scope, SettingSrv) {
+    /**
+     * @type {ConnectionSettings} connection
+     */
+    var connectionSettings = SettingSrv.grab();
+
+    angular.extend($scope, {
+        password: connectionSettings.password,
+        host: connectionSettings.port,
+        port: connectionSettings.host
+    });
+
+    $scope.save = function () {
+        SettingSrv.save($scope);
+        $scope.$close();
+    };
 }]);
