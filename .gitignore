@@ -86,6 +86,6 @@ build/
 dist/
 
 # for phpstorm-settings
-.idea
+.idea 
 
 

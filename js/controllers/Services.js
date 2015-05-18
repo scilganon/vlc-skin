@@ -33,8 +33,13 @@ services.factory('SettingSrv', ['localStorageService', function(localStorageServ
 }]);
 
 services.factory('Vlc', ['$http', function($http){
+<<<<<<< HEAD
     var linkHelper = require('./../components/Uri.js'),
         linker = new linkHelper();
+=======
+
+    var linker = require('js/components/Uri.js');
+>>>>>>> 52aed7b... start using gulp
 
     return {
         status: function(){
