@@ -33,8 +33,8 @@ services.factory('SettingSrv', ['localStorageService', function(localStorageServ
 }]);
 
 services.factory('Vlc', ['$http', function($http){
-
-    var linker = require('js/components/Uri.js');
+    var linkHelper = require('./../components/Uri.js'),
+        linker = new linkHelper();
 
     return {
         status: function(){

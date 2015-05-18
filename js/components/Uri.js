@@ -38,3 +38,5 @@ var Uri = function(config){
         }
     };
 };
+
+module.exports = Uri;
